@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+
+<script>
+
+//////////////////////
+// javascript start //
+//////////////////////
+
+// $$$ set indexes per-page to change what unlocks occur from visiting this page!
+var do_page = true;
+var page = 0; // page index (for counting how many of your pages the player has visited)
+var do_item = true;
+var item = 2; // 0 - 6 (left to right)
+
+// entry point (on page load)
+function load() {
+	
+	// set this page to loaded
+	if(do_page)
+		setCookie("page" + page, 1, 365);
+	
+	// set this item to ITEM-GET
+	if(do_item)
+		setCookie("item" + item, 1, 365);
+}
+
+// util funciton to set cookies		
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+</script>
+</HEAD>
+
+<body onload="load()">
+
+</body>
+</html> 

@@ -1,0 +1,796 @@
+<HTML>
+<HEAD>
+<style>
+
+
+.img-container { position: relative; }
+
+
+.img-container .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.img-container .sky {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.img-container .cloudsBG {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.img-container .mountain {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.img-container .cloudsFG {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.img-container .bush {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.img-container .encounterBG {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 6;
+}
+
+.img-container .player {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 7;
+  pointer-events: none;
+}
+
+.img-container .encounter {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.img-container .grass {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.img-container .filter {
+  position: absolute;
+  top: 52;
+  left: 8;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.img-container .descriptionBox {
+  position: absolute;
+  top: 44;
+  left: 0;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.img-container .dialogueBox {
+  position: absolute;
+  top: 44;
+  left: 0;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.img-container .frame {
+  position: absolute;
+  top: 44;
+  left: 0;
+  z-index: 13;
+  pointer-events: none;
+}
+
+
+
+.img-container .infoButton {
+  position: absolute;
+  top: 40;
+  left: 180;
+  z-index: 14;
+}
+
+
+.img-container .text1 {
+  position: absolute;
+  top: 180;
+  left: 19;
+  z-index: 15;
+  font-family: "Lucida Console", monospace;
+  font-size: 10px;
+}
+
+.img-container .description {
+  position: absolute;
+  top: 120;
+  left: 62;
+  z-index: 16;
+  font-family: "Lucida Console", monospace;
+  font-size: 9.5px;
+  width: 115px;
+}
+
+.img-container .dialogue {
+  position: absolute;
+  top: 54;
+  left: 36;
+  z-index: 17;
+  font-family: "Lucida Console", monospace;
+  font-size: 10px;
+  width: 130px;
+}
+
+
+.img-container .marquee {
+  position: absolute;
+  top: 112;
+  left: 8;
+  z-index: 18;
+  pointer-events: none;
+}
+
+
+
+.img-container .inventory {
+  position: absolute;
+  top: 201;
+  left: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.img-container .item0 {
+  position: absolute;
+  top: 208;
+  left: 19;
+  z-index: 21;
+}
+
+.img-container .item1 {
+  position: absolute;
+  top: 208;
+  left: 42;
+  z-index: 22;
+}
+
+.img-container .item2 {
+  position: absolute;
+  top: 208;
+  left: 65;
+  z-index: 23;
+}
+
+.img-container .item3 {
+  position: absolute;
+  top: 208;
+  left: 88;
+  z-index: 24;
+}
+
+.img-container .item4 {
+  position: absolute;
+  top: 208;
+  left: 111;
+  z-index: 25;
+}
+
+.img-container .item5 {
+  position: absolute;
+  top: 208;
+  left: 134;
+  z-index: 26;
+}
+
+.img-container .item6 {
+  position: absolute;
+  top: 208;
+  left: 157;
+  z-index: 27;
+}
+
+.img-container .sparkle0 {
+  position: absolute;
+  top: 208;
+  left: 19;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle1 {
+  position: absolute;
+  top: 208;
+  left: 42;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle2 {
+  position: absolute;
+  top: 208;
+  left: 65;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle3 {
+  position: absolute;
+  top: 208;
+  left: 88;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle4 {
+  position: absolute;
+  top: 208;
+  left: 111;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle5 {
+  position: absolute;
+  top: 208;
+  left: 134;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.img-container .sparkle6 {
+  position: absolute;
+  top: 208;
+  left: 157;
+  z-index: 22;
+  pointer-events: none;
+}
+
+</style>
+<script>
+
+//////////////////////
+// javascript start //
+//////////////////////
+
+class Item {
+  constructor(slot, id, src, desc) {
+    this.slot = slot;
+	this.src = "" + src;
+    this.desc = desc;
+	this.id = id;
+	this.earned = 0;
+	this.name = "item" + slot;
+	this.unlock_name = "unlock" + slot + "-" + id; 
+	this.sparkle_name = "sparkle" + slot;
+  }
+}
+
+class Anim {
+  constructor(src, time) {
+    this.time = time;
+	this.src = "" + src;
+  }
+}
+
+class Encounter {
+  constructor(intro, idle, interact, attack_on_interact, exit, filter, bg_intro, bg_idle, bg_exit) {
+    this.intro = intro;
+	this.idle = idle;
+	this.interact = interact;
+    this.attack_on_interact = attack_on_interact;
+	this.exit = exit;
+	this.filter = filter;
+	this.bg_intro = bg_intro;
+	this.bg_idle = bg_idle;
+	this.bg_exit = bg_exit;
+  }
+}
+
+// global vars
+var player_idle = "http://i.imgbox.com/ps1rw1Fb.gif"; 							// $$$ player idle anim
+var player_walk = "http://i.imgbox.com/o5UR2OG7.gif"; 							// $$$ player walk anim
+var player_attack_anim = new Anim("http://i.imgbox.com/b3x2DomF.gif", 500); 	// $$$ player attack anim
+
+var grass_static = "http://i.imgbox.com/REswieqb.png";
+var grass_moving = "http://i.imgbox.com/RrBxjjhp.gif";
+
+var dialogue_box = "http://i.imgbox.com/IiJGBNkj.png";
+var desc_box = "http://i.imgbox.com/F5e4bKLk.png";
+var sparkle = new Anim("http://i.imgbox.com/OmZhCFaA.gif", 800);
+
+var click_reminder = "http://i.imgbox.com/PKMRyFuP.gif";
+var has_reminded_click = false;
+
+var dialogue_id = 0;
+
+var skulls = 0;
+
+var num_pages = 11; 	 // $$$ num pages to unlock last item - set to -1 to disable
+
+var currentSkullTrophy = -1;
+var skullTrophies = [new Item(0, 1, "http://i.imgbox.com/81JK8Tn1.png", "You survived your first interview! Great job! Here is a gold star. Maybe it will get better if you find a worthy candidate?"),
+					 new Item(0, 3, "http://i.imgbox.com/mdB7cqwv.png", "You are really \'slaughtering\' these candidates! All of these bones will make a wonderful necklace."),
+					 new Item(0, 6, "http://i.imgbox.com/Ot3ONhah.png", "Okay, so the interviews aren\'t going so well. Look on the bright side! You managed to loot a shiny new necklace."),
+					 new Item(0, 9, "http://i.imgbox.com/3jaZB2Y8.png", "Maybe this interview is a little too difficult? That last candidate \'dropped\' his silver ring and didn\'t even notice!"), 
+					 new Item(0, 12, "http://i.imgbox.com/UKCGpByN.png", "Wow, you are one productive employer! Here\'s a gold ring for your troubles."), 
+					 new Item(0, 15, "http://i.imgbox.com/dlKUIA3x.png", "It seems like this is hopeless. Here is some pie to celebrate a \'productive\' day! Please stop killing these skeletons..")];
+
+var items = [new Item(1, 1, "http://i.imgbox.com/TDLwzAxB.png", "Hello! While you browse, feel free to help guide this knight in his quest to recruit a worthy skeleton sidekick."),  // $$$ item 2
+			 new Item(2, 1, "http://i.imgbox.com/lbPKvJu5.png", "You found a stray sock. This is embarrassing, sorry!"),  // $$$ item 3
+			 new Item(3, 1, "http://i.imgbox.com/gi0KJbr8.png", "Wow, you probably shouldn\'t of taken this wheel off of the Opportunity rover as a souvenir!"),  // $$$ item 4
+			 new Item(4, 1, "http://i.imgbox.com/ZQ90YvxQ.png", "You found a scroll of publications. (+1 int)"),  // $$$ item 5
+			 new Item(5, 1, "http://i.imgbox.com/2jjOR4tq.png", "You could use this ship to fly around if this game had audio.."),  // $$$ item 6
+			 new Item(6, 1, "http://i.imgbox.com/nm0Cjsq0.png", "This is the key to my portfolio! Maybe if you explore all that it has to offer, you just might find something nice?")]; // $$$ item 7
+
+// $$$ random dialogue
+var dialogue = ["That mountain looks familiar...",
+				"Would another browser help me walk faster?",
+				"Don\'t close the page and leave me alone!",
+				"Oops, I left an &lt;img&gt; tag on my armor..", // @@@ should read as "img" tag
+				"My qualifications include being EPIC!",
+				".GIF candidates are always the weakest!",
+				"I hope the devs add a \'sit\' animation..",
+				"That guy\'s resume is larger than my sword!",
+				"Feels like I\'m just talking to myself..",
+				"Don\'t poke me with that cursor.",
+				"I love \'interviewing\' these skeletons!", 
+				"What does HR mean? Health Restore?",
+				"Oh, what a day, what a lovely day!",
+				"I sure hope this game doesn\'t have DLC..",
+				"The only job requirement: 1000 HP!",
+				"Please send in the next candidate!", 
+				"I could use a coffee potion..",
+				"Does a degree give bonus strength..?"];
+				
+var active_dialogue = [];
+
+var skeleEncounter = new Encounter(new Anim("http://i.imgbox.com/Y9vdwPGm.gif", 2500), 		 // $$$ skele intro anim
+									"http://i.imgbox.com/087J0xkF.gif",					 	 // $$$ skele idle anim
+									new Anim("http://i.imgbox.com/rvoTFKn0.gif", 1500),		 // $$$ skele interact anim
+									true,														
+									new Anim("http://i.imgbox.com/KyfXaChw.gif", 10100),	 // $$$ skele exit anim
+									"http://i.imgbox.com/h6JHxHPU.png",					 	 // $$$ skele filter
+									new Anim("http://i.imgbox.com/LRhLuaPS.gif", 2000),	 	 // $$$ skele BG intro anim
+									"http://i.imgbox.com/zelfFQ02.gif",					 	 // $$$ skele BG idle anim
+									new Anim("http://i.imgbox.com/grDnoV5P.gif", 2000));	 // $$$ skele BG exit anim
+									
+var game_state = 0; // 0 for walking, 1 for encounter
+
+// entry point (on page load)
+function load() {
+	
+	// start pre-loading immediately!
+	preloader();
+	
+	// $$$ ensure welcome and key unlocks are available
+	items[0].earned = true;
+	items[5].earned = true;
+	
+	// load skulls
+	skulls = getCookie("skulls");
+	if(skulls == "") {
+		skulls = 0;
+	}
+	setSkulls(skulls);
+	
+	// give a small amount of time to the preloader (probably should use onload events instead)
+	setTimeout(function () {
+		
+		// start walking
+		walk();
+		
+		// start loop with an initial call to body, followed by an infinite loop of them
+		timeoutBody();
+		timeout();
+		
+	}, 1000);
+}
+
+// pre-load a given image
+function preload(in_src) {
+	var img = new Image();
+	img.src = "" + in_src;
+	return img;
+}
+
+// pre-load all images
+function preloader() {
+	if (document.images) {
+		preload(player_idle);
+		preload(player_walk);
+		preload(player_attack_anim.src);
+		preload(grass_static);
+		preload(skeleEncounter.intro.src);
+		preload(skeleEncounter.idle);
+		preload(skeleEncounter.interact.src);
+		preload(skeleEncounter.exit.src);
+		preload(skeleEncounter.bg_intro.src);
+		preload(skeleEncounter.bg_idle);
+		preload(skeleEncounter.bg_exit.src);
+	}
+}
+
+// main loop (recursive backend)
+function timeout() {
+    setTimeout(function () {
+        timeoutBody();
+		timeout();
+    }, 1000);
+}
+
+// main loop (frontend)
+function timeoutBody() {
+	
+	// update items
+	updateItems();
+	
+}
+
+// util function to format skulls integer
+function formatNum(num) {
+	if(num > 1000) {
+		num = 999;
+	}
+	
+	if(num < 10) {
+		return "x00" + num;
+	}
+	else if(num < 100) {
+		return "x0" + num;
+	}
+	else {
+		return "x" + num;
+	}
+}
+
+function setSkulls(num) {
+	skulls = num;
+	setCookie("skulls", skulls, 365);
+	document.getElementById("skulls").innerHTML = formatNum(skulls);
+	
+	// update items in-case we have earned a new trophy!
+	updateItems();
+}
+
+// util funciton to set cookies		
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// util function to get cookies
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+// say the next unique random dialogue from the dialogue array
+function sayDialogue() {	
+	if(active_dialogue.length <= 0) {
+		var temp_list = dialogue.slice();
+		while(temp_list.length > 0) {
+			var index = Math.floor(Math.random() * temp_list.length);
+			var next = temp_list[index];
+			active_dialogue.push(next);
+			temp_list.splice(index, 1);
+		}
+	}
+	say(active_dialogue[active_dialogue.length-1], 3000);
+	active_dialogue.pop();
+}
+
+// hey! listen! (say some dialogue for the given duration)
+function say(text, duration) {
+	var di = ++dialogue_id;
+	document.dialogueBox.src = dialogue_box;
+	document.getElementById("dialogue").innerHTML = text;
+	setTimeout(function () {
+		if(di == dialogue_id) {
+			document.dialogueBox.src = "";
+			document.getElementById("dialogue").innerHTML = "";
+		}
+    }, duration);
+}
+
+// play an anim after the given delay for the given image (element), and then switch to the given idle
+function playAnim(img, delay, anim, idle) {	
+	setTimeout(function () {
+		img.src = anim.src;
+		setTimeout(function () {
+			img.src = idle;
+		}, anim.time);
+	}, delay);
+}
+
+// go to walking/dialogue state
+function walk() {
+	
+	///////////////////////////////////////////
+	// now we do the walkin' and the talkin' //
+	///////////////////////////////////////////
+	
+	// start the walkin'
+	document.player.src = player_walk;
+	document.grass.src = grass_moving;
+	
+	// start the first talkin'
+	setTimeout(function () {
+		
+		// do the first talkin'
+		sayDialogue();
+		
+		// start the first talkin'
+		setTimeout(function () {
+		
+			// do the second talkin'
+			sayDialogue();
+			
+			// wait until the beginning of the next encounter
+			setTimeout(function () {
+			
+				// do the intro stuffs
+				playAnim(document.encounterBG, 0, skeleEncounter.bg_intro, skeleEncounter.bg_idle);
+				playAnim(document.encounter, 1500, skeleEncounter.intro, skeleEncounter.idle);
+				
+				// apply the filter after a delay
+				setTimeout(function () {
+					document.filter.src = skeleEncounter.filter;
+				}, 800);
+				
+				// wait for the duration of the encounter intro
+				setTimeout(function () {
+				
+					// set player to idle
+					document.player.src = player_idle;
+					document.grass.src = grass_static;
+			
+					// start a click reminder if the first encounter
+					if(!has_reminded_click) {
+						has_reminded_click = true;
+						document.marquee.src = click_reminder;
+					}
+			
+					// set game state to encounter
+					game_state = 1;
+				
+				}, skeleEncounter.intro.time + 1500);	
+					 
+			}, 7600 - skeleEncounter.intro.time - 1500);		 
+		
+		}, 7500);
+		
+	}, 3000);
+}
+
+// update all item states on tick (by reading cookies)
+function updateItems() {	
+
+	// do direct item unlocks
+	for(var x = 0; x < items.length; x++) {
+		if(items[x].earned != 1) {
+			var flag = getCookie(items[x].name);
+			if(flag == 1) {
+				items[x].earned = 1;
+			}
+		}
+		
+		if(items[x].earned == 1) {
+			document.getElementById(items[x].name).src = items[x].src;
+			sparkleItem(items[x]);
+		}
+	}
+	
+	// special case: unlock the last item if the num_pages has been reached!
+	if(num_pages != -1 && items[5].id != 2) {
+		var unlocked = true;
+		for(var x = 0; x < num_pages; x++) {
+			var page = getCookie("page" + x);
+			if(page != 1) {
+				unlocked = false;
+				break;
+			}
+		}
+		
+		if(unlocked) {
+			items[5].earned = 1;
+			items[5].id = 2;
+			items[5].desc = "You explored my entire portfolio and found this nice goblet! Go you! Now, why not reach out to me through email or LinkedIn?"; // $$$ goblet description
+			items[5].src = "http://i.imgbox.com/mmpZfZma.png"; // $$$ goblet icon
+			items[5].sparkle = "goblet";
+			setCookie(items[5].name, 1, 365);
+			document.getElementById(items[5].name).src = items[5].src;
+			sparkleItem(items[5]);
+		}
+	}
+	
+	// special case: consider skull trophy unlocks
+	for(var x = skullTrophies.length-1; x >= 0; x--) {
+		var unlocked = false;
+		if(skullTrophies[x].earned == 1)
+			unlocked == true;
+		else if(skulls >= skullTrophies[x].id)
+			unlocked = true;
+		
+		if(unlocked) {
+			if(x > currentSkullTrophy) {
+				currentSkullTrophy = x;
+				skullTrophies[x].earned = 1;
+				document.getElementById(skullTrophies[x].name).src = skullTrophies[x].src;
+				sparkleItem(skullTrophies[x]);
+			}
+			break;
+		}
+	}
+}
+
+// util function to make an item sparkle if it has yet to sparkle (unique unlock)
+function sparkleItem(in_item) {
+	var unlocked = getCookie(in_item.unlock_name);
+	if(unlocked != 1) {
+		setCookie(in_item.unlock_name, 1, 365);
+		playAnim(document.getElementById(in_item.sparkle_name), 0, sparkle, "");
+	}
+}
+
+// event for item hover / dehover
+function itemHover(isHovering, index) {
+	if(isHovering) {
+		if(index == 0) { // skull trophy
+			if(currentSkullTrophy >= 0) {
+				document.descriptionBox.src = desc_box;
+				document.getElementById("description").innerHTML = skullTrophies[currentSkullTrophy].desc;
+			}
+		}
+		else if(items[index - 1].earned == 1) {
+			document.descriptionBox.src = desc_box;
+			document.getElementById("description").innerHTML = items[index - 1].desc;
+		}
+	}
+	else {
+		document.descriptionBox.src = "";
+		document.getElementById("description").innerHTML = "";
+	}
+}
+
+// event for screen click
+function encounterClick() {
+	if(game_state == 1) {
+		
+		// switch back to non-encounter game state
+		game_state = 0;
+		
+		// stop click reminder
+		document.marquee.src = "";
+		
+		// do attack if necessary
+		var interact_delay = 0;
+		if(skeleEncounter.attack_on_interact) {
+			playAnim(document.player, 0, player_attack_anim, player_idle);
+			interact_delay = 250;
+		}
+		
+		// do interact anim
+		playAnim(document.encounter, interact_delay, skeleEncounter.interact, skeleEncounter.exit.src);
+		
+		// update skulls
+		setSkulls(parseInt(skulls) + 1);
+				 
+		// wait until after the interact anim
+		setTimeout(function () {	
+			
+			// start encounter bg exit anim
+			playAnim(document.encounterBG, 0, skeleEncounter.bg_exit, "");
+			
+			// remove filter after a short delay
+			setTimeout(function () {
+				document.filter.src = "";
+			}, 1000);
+			
+			// start the walkin'
+			walk();
+			
+		}, interact_delay + skeleEncounter.interact.time);
+	}
+}
+
+</script>
+</HEAD>
+
+<body onload="load()">
+
+<div class="img-container">
+
+	<img class="title" src="http://i.imgbox.com/TPyJoIz0.png" />  <!-- $$$ title screen -->
+	<p><a href="https://www.brandon-gamedev.com/portfolio-crawler" target="_blank"> <img class="infoButton" src="http://i.imgbox.com/vzkUZ0Dj.png"></a></p> <!-- $$$ info button / link to info page -->
+
+	
+	<img class="sky" src="http://i.imgbox.com/qgysslwv.png" /> <!-- $$$ sky backdrop -->
+	<img class="mountain" src="http://i.imgbox.com/PKPK14Ii.gif" /> <!-- $$$ mountain loop -->
+	<img class="cloudsFG" src="http://i.imgbox.com/Ev6P4HUA.gif" /> <!-- $$$ close clouds loop -->
+	<img class="bush" src="http://i.imgbox.com/HuMsdUHw.gif" />  <!-- $$$ bush/trees loop -->
+	<img class="encounterBG" src="" name = "encounterBG" onclick="encounterClick()" />
+	<img class="player" src="http://i.imgbox.com/ps1rw1Fb.gif" name="player" /> <!-- $$$ player idle loop -->
+	<img class="encounter" src="" name="encounter" />
+	<img class="grass" src="http://i.imgbox.com/REswieqb.png" name = "grass" />  <!-- $$$ grass single frame -->
+	<img class="filter" src="" name = "filter" />
+	<img class="frame" src="http://i.imgbox.com/53Aq0BEa.png" />	<!-- $$$ title screen -->
+	<img class="dialogueBox" src="" name = "dialogueBox" />
+	<img class="descriptionBox" src="" name = "descriptionBox" />
+	<img class="marquee" src="" name = "marquee" />
+	
+	
+	<p class="text1" id="skulls"></p>
+	<p class="dialogue" id="dialogue"></p>
+	<p class="description" id="description"></p>
+
+	
+	<img class="inventory" src="http://i.imgbox.com/0LJ61jBW.png" />	<!-- $$$ title screen -->
+	<img class="item0" id="item0" onmouseover="itemHover(true, 0)" onmouseout="itemHover(false, 0)" src="" />
+	<img class="item1" id="item1" onmouseover="itemHover(true, 1)" onmouseout="itemHover(false, 1)" src="" />
+	<img class="item2" id="item2" onmouseover="itemHover(true, 2)" onmouseout="itemHover(false, 2)" src="" />
+	<img class="item3" id="item3" onmouseover="itemHover(true, 3)" onmouseout="itemHover(false, 3)" src="" />
+	<img class="item4" id="item4" onmouseover="itemHover(true, 4)" onmouseout="itemHover(false, 4)" src="" />
+	<img class="item5" id="item5" onmouseover="itemHover(true, 5)" onmouseout="itemHover(false, 5)" src="" />
+	<img class="item6" id="item6" onmouseover="itemHover(true, 6)" onmouseout="itemHover(false, 6)" src="" />
+	<img class="sparkle0" id="sparkle0" src="" />
+	<img class="sparkle1" id="sparkle1" src="" />
+	<img class="sparkle2" id="sparkle2" src="" />
+	<img class="sparkle3" id="sparkle3" src="" />
+	<img class="sparkle4" id="sparkle4" src="" />
+	<img class="sparkle5" id="sparkle5" src="" />
+	<img class="sparkle6" id="sparkle6" src="" />
+	
+
+ </div>
+
+</body>
+</html> 
